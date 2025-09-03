@@ -1,0 +1,129 @@
+// aboutus.js - Accordion functionality for About Us page
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all accordion header buttons
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+    // Loop through each header
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            // Find the corresponding content div
+            const content = this.nextElementSibling; 
+
+            // Toggle the 'display' style property
+            if (content.style.display === 'block') {
+                content.style.display = 'none';  // Hide the content
+            } else {
+                content.style.display = 'block';  // Show the content
+            }
+        });
+    });
+});
+
+// scripts.js - interactive features for static site
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Fade-in on scroll
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+    // Simple accordion functionality (used on About page)
+    document.querySelectorAll('.accordion-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const panel = btn.nextElementSibling;
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+            if (!panel) return;
+            panel.style.display = !expanded ? 'block' : 'none';
+        });
+    });
+
+    // Lightbox (SimpleLightbox)
+    if (window.SimpleLightbox) {
+        try {
+            new SimpleLightbox('.gallery-grid a', { captions: true });
+        } catch (e) { /* ignore init errors */ }
+    }
+
+    // Enquiry form validation & mailto flow (getinvolved.html)
+    const enquiryForm = document.getElementById('enquiryForm');
+    if (enquiryForm) {
+        enquiryForm.addEventListener('submit', (ev) => {
+            ev.preventDefault();
+            const errors = [];
+            const data = Object.fromEntries(new FormData(enquiryForm).entries());
+
+            if (!data.name || data.name.trim().length < 2) errors.push('Please enter full name (min 2 characters).');
+            if (!data.email || !/^\S+@\S+\.\S+$/.test(data.email)) errors.push('Please enter a valid email.');
+            if (!data.service) errors.push('Please select a service.');
+            if (data.guests && isNaN(Number(data.guests))) errors.push('Guests must be a number.');
+
+            const errorsEl = document.getElementById('enquiryErrors');
+            if (errorsEl) errorsEl.innerHTML = '';
+            if (errors.length) {
+                if (errorsEl) errorsEl.innerHTML = '<div class="error">' + errors.join('<br>') + '</div>';
+                return;
+            }
+
+            // simple cost calculation
+            const baseMap = {
+                hoodies: 350,
+                sweater: 330,
+                tshirt: 180,
+                hat: 200,
+                'service-volunteer': 0,
+                'service-sponsor': 0
+            };
+            const unit = baseMap[data.item] ?? baseMap[data.service] ?? 0;
+            const guests = Number(data.guests || 1);
+            const estimated = unit * guests;
+
+            const summary = `Enquiry from ${data.name}
+Email: ${data.email}
+Service: ${data.service}
+Item: ${data.item || 'N/A'}
+Guests: ${guests}
+Estimated cost: R${estimated}`;
+
+            const confirmMsg = `Estimated cost: R${estimated}\n\nClick OK to open your email client and send this enquiry.`;
+            if (confirm(confirmMsg)) {
+                const to = 'info@example.org';
+                const subject = encodeURIComponent(`Enquiry: ${data.service} from ${data.name}`);
+                const body = encodeURIComponent(summary + '\n\nMessage:\n' + (data.message || ''));
+                window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+            }
+        });
+    }
+
+    // Contact form (contactus.html) compile mailto
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (ev) => {
+            ev.preventDefault();
+            const data = Object.fromEntries(new FormData(contactForm).entries());
+            const errors = [];
+            if (!data.name || data.name.trim().length < 2) errors.push('Please enter your name.');
+            if (!data.email || !/^\S+@\S+\.\S+$/.test(data.email)) errors.push('Please enter a valid email.');
+            if (!data.message || data.message.trim().length < 6) errors.push('Message must be at least 6 characters.');
+            const errorsEl = document.getElementById('contactErrors');
+            if (errorsEl) errorsEl.innerHTML = '';
+            if (errors.length) {
+                if (errorsEl) errorsEl.innerHTML = '<div class="error">' + errors.join('<br>') + '</div>';
+                return;
+            }
+            const to = 'info@example.org';
+            const subject = encodeURIComponent(`${data.type || 'General'} message from ${data.name}`);
+            const body = encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`);
+            window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+        });
+    }
+
+});
+<script>
+  document.getElementById("historyBtn").addEventListener("click", function() {
+      const para = document.getElementById("historyText");
+      para.style.display = (para.style.display === "none") ? "block" : "none";
+  });
+</script>

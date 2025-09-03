@@ -1,0 +1,441 @@
+*{ margin:0; padding:0; box-sizing:border-box; }
+html,body{ height:100%; font-family: Arial, Helvetica, sans-serif; color:#111; background:#fff; }
+
+/* NAV */
+nav{ background: #ff6fa3; color: #fff; display:flex; align-items:center; justify-content:space-between;
+    padding:8px 20px; position:fixed; top:0; left:0; right:0; z-index:1000; }
+nav .brand img{ height:56px; width:56px; border-radius:50%; object-fit:cover; border:3px solid #fff; }
+nav ul{ list-style:none; display:flex; gap:8px; align-items:center; margin-left:auto; }
+nav ul li a{ color:#fff; text-transform:uppercase; font-size:14px; padding:8px 10px; display:inline-block; }
+nav ul li a.active, nav ul li a:hover{ color:#fff; background:rgba(255,255,255,0.08); border-radius:4px; }
+
+/* HERO */
+.hero{ min-height:80vh; display:flex; align-items:center; justify-content:center; text-align:center;
+ padding:120px 20px 80px; background-image: url("images/hat.jpg"); background-size:cover; background-position:center; }
+.hero h1{ font-size:36px; color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.5); margin-bottom:12px;}
+.hero p{ color:#fff; margin-bottom:18px; max-width:760px; }
+
+/* Buttons */
+.btn{ display:inline-block; padding:12px 20px; background:#ff9f2f; color:#fff; border-radius:6px; text-decoration:none; font-weight:600; }
+.btn:hover{ filter:brightness(.95); transform:translateY(-1px); }
+
+/* Layouts */
+.container{ max-width:1100px; margin:40px auto; padding:0 16px; }
+.row{ display:flex; gap:20px; flex-wrap:wrap; align-items:flex-start; }
+.column{ flex:1 1 30%; background: #f6f6ff; padding:18px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,.05); }
+.column img{ width:100%; border-radius:8px; object-fit:cover; }
+
+/* Footer */
+footer{ background:#fff; color:#222; text-align:center; padding:18px 12px; border-top:1px solid #eee; margin-top:40px; }
+
+/* Gallery grid */
+.gallery-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:16px; }
+.gallery-grid a img{ width:100%; height:180px; object-fit:cover; border-radius:8px; display:block; }
+/* Forms */
+.form-card{ background:#fff; padding:18px; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,.06); }
+.form-row{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:10px; }
+.form-row input[type="text"], .form-row input[type="email"], .form-row input[type="tel"], .form-row textarea, .form-row select, .form-row input[type="date"], .form-row input[type="number"]{
+    width:100%; padding:10px; border:1px solid #ddd; border-radius:6px; font-size:15px;
+}
+label{ font-size:14px; display:block; margin-bottom:6px; }
+.error{ color:#b00020; font-size:14px; margin-top:6px; }
+
+/* Accordion & tabs */
+.accordion-btn{ width:100%; text-align:left; padding:12px; border-radius:6px; border:1px solid #eee; background:#fff; cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
+.accordion-panel{ padding:12px; border:1px solid #eee; border-top:none; border-radius:0 0 6px 6px; display:none; background:#fafafa; }
+
+/* Small screens */
+@media (max-width:900px){
+    nav ul{ display:none; } /* keep nav simple on small screens */
+    .hero h1{ font-size:28px; }
+    .column{ flex:1 1 100%; }
+}
+
+/* subtle fade-in */
+.fade-in{ opacity:0; transform:translateY(8px); transition:opacity .55s ease, transform .55s ease; }
+.fade-in.visible{ opacity:1; transform:none; }
+/*index page end */
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdf0f8;
+  color: #333;
+}
+
+/* =========== NAVIGATION =========== */
+nav {
+  background-color: #c2185b;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+nav .brand img {
+  height: 50px;
+  width: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  text-decoration: underline;
+}
+
+/* =========== HERO SECTION =========== */
+.hero {
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* YOUR HERO BACKGROUND */
+  background-image: url("images/hoodie.jpg"); /* change to your image */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* Adds brightness so text is clear */
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);   /* Dark overlay so picture shows clearly */
+}
+
+.hero-content {
+  position: relative; /* allows text ABOVE overlay */
+  color: white;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+/* General Layout */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Flex layout for the row */
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Column styling */
+.column {
+    flex: 1 1 30%; /* Adjust percentage for different layout */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* For mobile responsiveness, adjust column width */
+@media (max-width: 768px) {
+    .column {
+        flex: 1 1 100%;
+    }
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Featured images styling */
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Featured Section Styling */
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+/* Add some spacing between sections */
+section {
+    margin-bottom: 40px;
+}
+
+/* Additional spacing for featured images */
+.row img {
+    margin-top: 12px;
+}
+
+
+  color: #f0f0f0;
+  font-size: 1.3rem;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 7vw;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+/* BUTTON */
+.btn {
+  background-color: #ffeb3b;
+  color: #333;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* =========== RESPONSIVE BREAKPOINTS =========== */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* about us page */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdf0f8;
+    color: #333;
+}
+
+
+/* Navigation Styling */
+nav {
+    display: flex;
+    justify-content: space-between; /* Align items to the right */
+    background-color: pink; /* Pink background for navigation */
+    padding: 10px 20px;
+    border-radius: 20px; /* Rounded corners for the navigation */
+}
+
+nav .brand img {
+    width: 50px; /* Smaller logo size */
+    height: 50px; /* Height adjusted for a square logo */
+    border-radius: 50%; /* Makes logo round */
+}
+
+/* Navigation links */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white; /* White text color */
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* Active link style */
+nav ul li a.active {
+    color: #ff4d99; /* Color for active link */
+}
+
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    text-decoration: underline;
+}
+background: url('tshirts.jpg') no-repeat center center fixed;
+
+/* PAGE CONTENT */
+.about-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.about-container h1 {
+    color: #c2185b;
+    font-size: 32px;
+}
+
+.intro-text {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  #historyText {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+
+/* ACCORDION */
+.accordion-item {
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.accordion-header {
+    width: 100%;
+    background: #f8bbd0;
+    border: none;
+    padding: 15px;
+    text-align: left;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.accordion-content {
+    display: none; /* Initially hidden */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ccc;
+}
+
+.accordion-content p {
+    margin: 0;
+}
+
+/* FOOTER */
+.footer-text {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #777;
+}
+
+/* ----------------------- */
+/* RESPONSIVE BREAKPOINTS  */
+/* ----------------------- */
+
+/* Phones (small screens) */
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .navbar ul li {
+        text-align: center;
+    }
+
+    .about-container {
+        margin: 20px;
+        padding: 10px;
+    }
+
+    .about-container h1 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .intro-text {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .accordion-header {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .accordion-content {
+        font-size: 14px;
+    }
+
+    .footer-text {
+        font-size: 12px;
+    }
+}
+
+/* Tablets (medium screens) */
+@media (max-width: 900px) {
+
+    .navbar ul {
+        gap: 15px;
+    }
+
+    .about-container {
+        padding: 15px;
+    }
+
+    .about-container h1 {
+        font-size: 28px;
+    }
+}

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Our Work — Hyena Clan</title>
+    <meta name="description" content="Products and price list for Hyena Clan">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ff3b5c, #580b8a);
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            background: #ff3b5c;
+        }
+
+        nav a.brand img {
+            width: 200px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        nav ul li a.active {
+            color: #FFD700;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-top: 50px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .column {
+            width: 30%;
+            text-align: center;
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .column img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .column h3 {
+            margin-top: 10px;
+            font-size: 1.5em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #580b8a;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a class="brand" href="ourwork.html"><img src="images/logo.1.jpg" alt="logo"></a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a class="active" href="ourwork.html">Our Work</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="getinvolved.html">Enquire</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h1>Products</h1>
+        <p style="text-align: center;">We make hoodies, sweaters, t-shirts, hats and more.</p>
+
+        <div class="row">
+            <div class="column">
+                <img src="images/hoodie.jpg" alt="Hoodie">
+                <h3>Hoodie — R350</h3>
+            </div>
+            <div class="column">
+                <img src="images/pricelist.jpg" alt="Price list">
+                <h3>Price List</h3>
+            </div>
+            <div class="column">
+                <img src="images/tshirts.jpg" alt="T-shirts">
+                <h3>T-shirt — R180</h3>
+            </div>
+        </div>
+    </main>
+
+    <footer>Made with love by Neo</footer>
+
+    <script src="javascripts/scripts.js"></script>
+</body>
+</html>

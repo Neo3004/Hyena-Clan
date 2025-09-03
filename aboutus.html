@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Hyena Clan</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Inline Styles for Background Color and Layout -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('images/combo.jpg') no-repeat center center fixed; /* Full-page background image */
+            background-size: cover; /* Make the background image cover the whole page */
+            margin: 0;
+            padding: 0;
+            color: #333;
+            height: 100vh; /* Full viewport height */
+        }
+
+       /* Navigation Styling */
+nav {
+    display: flex;
+    justify-content: space-between; /* Align items to the right */
+    background-color: pink; /* Pink background for navigation */
+    padding: 10px 20px;
+    border-radius: 20px; /* Rounded corners for the navigation */
+}
+
+nav .brand img {
+    width: 50px; /* Smaller logo size */
+    height: 50px; /* Height adjusted for a square logo */
+    border-radius: 50%; /* Makes logo round */
+}
+
+/* Navigation links */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white; /* White text color */
+    text-decoration: none;
+    font-size: 1.2em;
+}
+        
+   
+
+        /* Page Content */
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for content */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .about-container h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ff80bf;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        /* Accordion Styles */
+        .accordion {
+            margin-top: 30px;
+        }
+        .accordion-item {
+            margin-bottom: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #ff80bf;
+        }
+        .accordion-header {
+            background-color: #ff80bf;
+            color: white;
+            font-size: 1.2em;
+            padding: 15px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        .accordion-header:hover {
+            background-color: #ff4d99;
+        }
+        .accordion-content {
+            display: none;
+            padding: 15px;
+            background-color: #f9e6f1;
+        }
+
+        /* Footer */
+        .footer-text {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+<!-- NAVIGATION MENU -->
+<nav>        
+    <a class="brand" href="aboutus.html">
+        <img src="images/logo.1.jpg" alt="Hyena Clan logo">
+    </a>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="aboutus.html">About Us</a></li>
+        <li><a href="ourwork.html">Our Work</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="getinvolved.html">Enquire</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+    <!-- PAGE CONTENT -->
+    <section class="about-container">
+        <h1>About Us</h1>
+        <p class="intro-text">
+            Hyena Clan was established in August 2020 in Alexandra Township.  
+            The name ‘hyena’ is used as a title for people who work hard, stay united,
+            and look after their community.
+        </p>
+
+        <!-- Accordion Sections for History, Vision, and Mission -->
+        <div class="accordion">
+
+            <!-- History -->
+            <div class="accordion-item">
+                <button class="accordion-header">History</button>
+                <div class="accordion-content">
+                    <p>
+                        Hyena Clan started as a small group dedicated to uplifting the youth 
+                        and empowering the community through creativity and teamwork. Over time,
+                        it grew into a local movement.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Vision -->
+            <div class="accordion-item">
+                <button class="accordion-header">Vision</button>
+                <div class="accordion-content">
+                    <p>
+                        Our vision is to create opportunities, build young leaders,
+                        and inspire innovation inside Alexandra Township and beyond.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mission -->
+            <div class="accordion-item">
+                <button class="accordion-header">Mission</button>
+                <div class="accordion-content">
+                    <p>
+                        Our mission is to support local talent, encourage entrepreneurship,
+                        and provide real-life skills that help community members grow.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="footer-text">Made with love by Neo</p>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        // Accordion functionality
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', function () {
+                const content = this.nextElementSibling;
+                const isOpen = content.style.display === 'block';
+                
+                // Close all accordion content first
+                document.querySelectorAll('.accordion-content').forEach(item => item.style.display = 'none');
+                
+                // If it's not open, open the clicked one
+                if (!isOpen) {
+                    content.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

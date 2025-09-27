@@ -17,7 +17,7 @@ Positive customer experience
 Productivity 
 
  # Proposed Website Features and Functionality  
-Homepage: 
+homepage: 
 Logo 
 Header 
 Footer 
@@ -25,29 +25,29 @@ Navigation bar
 Button 
 Welcome Message 
 
- About Us:  
+ aboutus:  
 History 
 Vision 
 Mission 
 
- Our Work: 
+ourwork: 
 Pictures of products 
 
- Gallery: 
+gallery: 
 Co-owner 
 Co-founder 
 Product sold 
 
- Get Involved: 
+getinvolved: 
 Form for inquiry  
 
-Contact Us:  
+contactus:  
 Physical Address  
 Social Media Handles 
 Phone Numbers	 
 
 # Design and User Experience  
-Color scheme: Purple, Red, White and Black  
+Color scheme: Pink, Yellow, White and Black  
 Typography: font: Times New Roman, font size: 12&18 
 Layout and Design: Fixed Navigation  
 User Experience Considerations:  Top Navigation, Buttons 

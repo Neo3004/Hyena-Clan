@@ -1,64 +1,89 @@
 *{
-    margin:0;
-    padding:0;
-    text-decoration:none;
-    list-style:none;
-    box-sizing: border-box;
+margin:0;
+padding:0;
+list-style:none;
+text-decoration:none;
+box-sizing:border-box;
+    
 }
-#index body{
-    margin:0;
-    font-family: sans-serif;
-    background-image: url(images\hat.jpg);
+#index.body{
+ 
+    background-size:cover ;
+    background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    color: white;
+    background-image: url("images\hat.jpg");
+   background-attachment: fixed;
+  
 }
-.topnav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px 20px;
+nav{
+   background:pink;
+   color:white;
+   display:flex;
+   justify-content: space-between;
+   padding:8px 40px;
+   position:fixed;
+   top:0;
+   left:0;
+   width:100%;
+   z-index:1000;
+}
 
+ nav.brand img{
+  border-radius: 50%;
+  position: relative;
+  left: 30px;
+  border: 3px solid #73AD21;
+    
 }
-.topnav img{
-    height: 50px;
+nav ul{
+    float:right;
+    margin-right:20px;
 }
-.topnav ul{
- list-style: none;
- margin: 0;
- padding: 0;
- display: flex;
- gap: 15px;
+nav ul li{ 
+    display: inline-block;
+    line-height: 80px;
+ margin: 0 5px;
 }
-.topnav ul li{
-    display: inline;
+
+nav ul li a{
    
-}
-.topnav ul li a{
-    text-decoration: none;
     color: white;
-    font-weight: bold;
-    transition: color 0.3s;
+   
+ 
+    font-size: 17px;
+    text-transform: uppercase;
+    border-radius:3px ;
+    padding: 7px 13px;
+    
 }
-.topnav ul li a:hover,
- .topnav ul li a.active{
+nav ul li a:hover,
+ nav ul li a.active{
     color: yellow;
  }
  .hero{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    margin-top: 100px;
+    padding: 0 20px;
+    justify-content: center;
+    align-items: center;
  }
  .hero h1{
-    font-size: 2.5me;
+    font-size: 36px;
+    margin-bottom: 10px;
  }
+ .hero p{
+    font-size: 18px;
+    margin-bottom: 20px;
+ }
+
  .hero-btn{
     display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    background: yellow;
-    color: black;
+    padding: 12px 24px;
+    transition: 0.3s ;
+    background: #f39c12;
+    color: white;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
@@ -68,14 +93,13 @@
   color:white;
 }
 footer{
-    position:fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    text-align: center;
-    padding: 10px;
+   background: purple;
+   color: white;
+   text-align: center;
+   padding: 15px;
+   margin-top: auto;
+   text-align: center;
+   position: fixed;
 }
 @media(max-width:700px){
     .row{
@@ -122,7 +146,7 @@ footer{
     color:black;
     text-align:center;
 }
-ourwork{
+#ourwork{
     font-family: monospace;
 }
 .nav{
@@ -138,10 +162,10 @@ div p{
     font-family: fantasy;
 }
 .column-1 img{
-    border-radius:50%;
+    border-radius:30%;
 }
 .column-2img{
-        border-radius:50%;
+        border-radius:30%;
 }
 .column-3 img{
     border-radius:50%;
@@ -183,19 +207,23 @@ div column img{
     vertical-align: middle;
     width: 100%;
 }
-@media screen and (max-width:600px) {
+@media screen and (max-width:800px) {
     div.column{
-flex:100%;
-max-width:100%;
+flex:50%;
+max-width:50%;
 
     }
-    
+}
+@media screen and (max-width:600px){
+    flex:100%;
+    max-width:100%;
 }
 #getinvolved{
     .body{
-        background-image: url(images\hoodie.jpg);
+        background-image: url("images\hoodie.jpg");
         background-repeat: no-repeat;
         background-size: 100% 100%;
+        background-attachment: fixed;
     }
     div form{
         display: block;
@@ -221,8 +249,12 @@ max-width:100%;
     }
 }
 #contactus 
+.nav{
+    height:80px;
+    width: 100%;
+}
     .body{
-        background-image: url(images\t-shirt.jpg);
+        background-image: url("images\t-shirt.jpg");
         background-size: cover;
         background-position: center;
     }

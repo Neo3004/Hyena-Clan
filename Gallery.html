@@ -1,263 +1,60 @@
-<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Gallery — Hyena Clan</title>
-    <meta name="description" content="Gallery of Hyena Clan products">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom, #ff3b5c, #580b8a);
-            color: white;
-        }
+    
+    <head>
+        <meta charset="utf-8">
+        <title>HYENA CLAN</title>
+        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+     
+        <style type="text/css">
+            body{
+                background-color:lightcyan;
+            }
+            h1{
+                text-align:center;
+            }
+            h2{
+                text-align:left;
+            }
+            footer{
+    
+    font-family: sans-serif;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;
+    color:black;
+    text-align:center;
+ }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px;
-            background: #ff3b5c;
-        }
-
-        nav a.brand img {
-            width: 100px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
-
-        nav ul li a.active {
-            color: #FFD700;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 3em;
-            margin-top: 50px;
-        }
-
-        .gallery-description {
-            text-align: center;
-            font-size: 1.5em;
-            margin-top: 10px;
-        }
-
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .column {
-            width: 280px;
-            text-align: center;
-            background-color: transparent;
-            color: #333;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-            box-sizing: border-box;
-        }
-
-        .column:hover {
-            transform: scale(1.05);
-        }
-
-        .column img {
-            width: 100%;
-            border-radius: 10px;
-            object-fit: cover;
-            cursor: pointer;
-        }
-
-        .column h3 {
-            margin-top: 10px;
-            font-size: 1.2em;
-        }
-
-        .column p {
-            font-size: 1em;
-            color: #f0f0f0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #580b8a;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* The Modal (background) */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            padding-top: 100px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.9);
-        }
-
-        /* Modal Content */
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-        }
-
-        /* Caption of Modal Image */
-        .caption {
-            text-align: center;
-            color: #ccc;
-            padding: 10px 0;
-            height: 150px;
-        }
-
-        /* Close Button */
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #fff;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-    </style>
-</head>
-<body>
-    <nav>
-        <a class="brand" href="index.html"><img src="images/logo.1.jpg" alt="logo"></a>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="ourwork.html">Our Work</a></li>
-            <li><a class="active" href="gallery.html">Gallery</a></li>
-            <li><a href="getinvolved.html">Enquire</a></li>
-            <li><a href="contactus.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <main class="container">
-        <h1>Gallery</h1>
-        <p class="gallery-description">Click images to view larger, click again to return to original size.</p>
-
-        <div class="row">
-            <div class="column">
-                <img src="images/hoodie.jpg" alt="Hoodie" onclick="openModal(this)">
-                <h3>Hoodie</h3>
-            </div>
-            <div class="column">
-                <img src="images/tshirts.jpg" alt="Tshirts" onclick="openModal(this)">
-                <h3>Tshirts</h3>
-            </div>
-            <div class="column">
-                <img src="images/shorts.jpg" alt="Shorts" onclick="openModal(this)">
-                <h3>Shorts</h3>
-            </div>
-            <div class="column">
-                <img src="images/pants.jpg" alt="Pants" onclick="openModal(this)">
-                <h3>Pants</h3>
-            </div>
-            <div class="column">
-                <img src="images/pricelist.jpg" alt="Pricelist" onclick="openModal(this)">
-                <h3>Pricelist</h3>
-            </div>
-            <div class="column">
-                <img src="images/courier services.jpg" alt="Courier Services" onclick="openModal(this)">
-                <h3>Courier Services</h3>
-                <p>We use courier services via Aaxi for nationwide deliveries for R100.</p>
-            </div>
-        </div>
-    </main>
-
+           
+        </style>
+    </head>
+    <body class="Gallery">
+        <nav class="navbnar">
+        <a class="active" href="gallery.html"><i class="fa fa-image"></i>Gallery</a> 
+         <a  href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+            <a href="aboutus.html"><i class="fa fa-user"></i>About Us</a>
+            <a href="ourwork.html"><i class="fa fa-briefcase"></i>Our Work</a>
+        <a href="getinvolved.html"><i class="fas fa-envelope"></i>Get Involved</a>
+    <a  href="contactus.html"><i class="fa-solid fa-address-book"></i>Contact Us</a>
+</nav>
+<div>
+    <h1>Team</h1>
+    <h2>Co-founder</h2>
+    <h2>Tshepang Sekhololo</h2>
+    <img scr="images\co-founder.jpg" alt="Co-founder">
+        <h3>Co-Owner</h3>
+        <h3>Warren Milepost</h3>
+    <img scr="images\co-owner.jpg" alt="Co-Owner">
+    <h3>Product Sold</h3>
+    <div class="gallery">
+     <img scr="images\shorts.jpg" alt="Shorts">
+                <img scr="images\trucksuit.jpg" alt="Tracksuit">
+       <img scr="images\cap.jpg" alt="Cap">
+   <img scr="images\beanie.jpg" alt="Beanie">
+</div>
+</div>
     <footer>Made with love by Neo</footer>
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="img01">
-        <div id="caption" class="caption"></div>
-    </div>
-
-    <script>
-    let isImageEnlarged = false;
-
-    function openModal(imageElement) {
-        var modal = document.getElementById("myModal");
-        var img = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-
-        if (isImageEnlarged) {
-            // Return the image to its original size if it's already enlarged
-            img.style.transform = "scale(1)";
-            modal.style.display = "none";
-            isImageEnlarged = false;
-        } else {
-            // Open and enlarge the image
-            img.src = imageElement.src;
-            captionText.innerHTML = imageElement.alt;
-            modal.style.display = "block";
-            img.style.transform = "scale(2)"; // This enlarges the image
-            isImageEnlarged = true;
-        }
-    }
-
-    function closeModal() {
-        var modal = document.getElementById("myModal");
-        modal.style.display = "none";
-    }
-
-    // Add event listener for double click to reset the image
-    document.addEventListener('dblclick', function(event) {
-        var img = document.getElementById("img01");
-        var modal = document.getElementById("myModal");
-        img.style.transform = "scale(1)";
-        modal.style.display = "none";
-        isImageEnlarged = false;
-    });
-</script>
-
-</body>
-</html>
+    </body>
+    </html>

@@ -70,7 +70,7 @@ Phone Numbers
 
 # Design and User Experience  
 <<<<<<< HEAD
-Color scheme: Purple, Red, White and Black  
+Color scheme: Purple, Pink, White and Black  
 =======
 Color scheme: Pink, Yellow, White and Black  
 >>>>>>> 0a419066714a65347757d05cc4649f7f49663667
